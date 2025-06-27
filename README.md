@@ -36,6 +36,8 @@ Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인
 - **provider.tf**  
   AWS 프로바이더를 설정하고, 기본 리전(region) 등 공통 프로바이더 설정을 정의하는 파일입니다.
 
+#Terraform을 사용하여 인프라 배포
+<pre> \```bash terraform init terraform plan terraform apply \``` </pre>
 
 
 
