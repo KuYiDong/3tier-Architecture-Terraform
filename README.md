@@ -42,4 +42,16 @@ terraform plan
 terraform apply </pre>
 
 
+## AWS 리소스
+
+### vpc
+
+### ec2
+
+### ALB
+
+### ASG
+
+### RDS
+
 
