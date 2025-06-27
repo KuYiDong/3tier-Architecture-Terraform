@@ -1,7 +1,7 @@
 # 3tier-Architecture-Terraform
 
 
-# 개요
+## 개요
 해당 프로젝트는 Terraform을 활용해 AWS 환경에 3계층(3-Tier) 아키텍처를 구축하였습니다. 해당 구성은 서비스의 확장성과 안정성을 고려하여 설계되었으며, 애플리케이션을 다음과 같은 세 가지 계층으로 나누어 구성합니다.
 
 1. 프레젠테이션 계층 (웹 계층):
@@ -15,7 +15,7 @@
 
 Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인프라 자동화 도구입니다. 반복 가능한 구성과 명확한 변경 이력을 바탕으로 효율적인 협업, 안정적인 배포, 유지보수의 용이성을 제공합니다. 이 프로젝트에서는 Terraform을 통해 네트워크, 보안 그룹, EC2, ALB, RDS 등 다양한 AWS 리소스를 자동으로 구축하고 관리할 수 있습니다.
 
-# Terraform 구성 파일
+## Terraform 구성 파일
 
 - **modules/**  
   재사용 가능한 Terraform 모듈들이 위치한 폴더입니다.  
@@ -36,7 +36,7 @@ Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인
 - **provider.tf**  
   AWS 프로바이더를 설정하고, 기본 리전(region) 등 공통 프로바이더 설정을 정의하는 파일입니다.
 
-## Terraform을 사용하여 인프라 배포
+### Terraform을 사용하여 인프라 배포
 <pre>terraform init 
 terraform plan 
 terraform apply </pre>
