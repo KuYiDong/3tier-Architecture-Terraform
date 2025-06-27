@@ -14,3 +14,68 @@
 애플리케이션에서 사용하는 데이터를 저장하고 관리하는 계층입니다. 주로 RDS와 같은 관계형 데이터베이스를 사용하며, 앱 계층의 요청에 따라 데이터를 조회하거나 수정합니다.
 
 Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인프라 자동화 도구입니다. 반복 가능한 구성과 명확한 변경 이력을 바탕으로 효율적인 협업, 안정적인 배포, 유지보수의 용이성을 제공합니다. 이 프로젝트에서는 Terraform을 통해 네트워크, 보안 그룹, EC2, ALB, RDS 등 다양한 AWS 리소스를 자동으로 구축하고 관리할 수 있습니다.
+
+# Terraform 구성 파일
+Terraform 구성 파일
+provider.tf
+AWS 프로바이더 설정과 리전(region)을 정의합니다. 이 프로젝트에서는 us-east-1 리전을 사용합니다.
+
+vpc.tf
+전체 네트워크 인프라를 구성합니다. 다음 리소스들이 포함됩니다:
+
+VPC, 인터넷 게이트웨이, NAT 게이트웨이, Elastic IP
+
+경로 테이블
+
+서브넷 구성:
+
+웹 계층용 공용 서브넷 2개
+
+앱 계층용 사설 서브넷 2개
+
+데이터베이스 계층용 사설 서브넷 2개
+
+webtier.tf
+웹 계층을 구성하는 리소스들을 정의합니다.
+
+외부 접근용 ALB (Application Load Balancer)
+
+웹 서버용 보안 그룹
+
+ALB 리스너 및 대상 그룹
+
+EC2 Auto Scaling Group 및 Launch Template
+
+apptier.tf
+애플리케이션 계층을 구성합니다.
+
+내부 전용 ALB
+
+앱 서버용 보안 그룹
+
+ALB 리스너 및 대상 그룹
+
+EC2 Auto Scaling Group 및 Launch Template
+
+database.tf
+데이터 계층을 구성합니다.
+
+RDS 또는 Aurora 클러스터
+
+DB 서브넷 그룹
+
+DB 보안 그룹
+
+bastionhost.tf
+퍼블릭 서브넷에 배스천 호스트(Bastion Host)를 생성하여, 프라이빗 서브넷 내 EC2 인스턴스에 접근할 수 있도록 합니다.
+
+keypair.tf
+EC2 인스턴스에 접근하기 위한 키 페어(Key Pair)를 생성합니다.
+
+variables.tf
+전체 인프라 구성에서 사용할 변수들을 정의합니다.
+
+outputs.tf
+배포 완료 후 출력할 정보들을 정의합니다. 예: ALB 주소, RDS 엔드포인트 등
+
+
