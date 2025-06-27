@@ -19,25 +19,23 @@ Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인
 
 - **modules/**  
   재사용 가능한 Terraform 모듈들이 위치한 폴더입니다.  
-  - **vpc/**: VPC, 서브넷, 인터넷 게이트웨이(IGW), NAT 게이트웨이 등 네트워크 리소스를 정의합니다.  
-  - **alb/**: 외부 및 내부용 Application Load Balancer(ALB) 구성을 담당합니다.  
-  - **asg/**: Auto Scaling Group 및 Launch Template 관련 리소스를 관리합니다.  
-  - **rds/**: RDS 인스턴스 및 클러스터를 구성합니다.  
+  - **web_alb/**: 외부용 Application Load Balancer(ALB) 구성을 담당합니다.
+  - **was_alb/**: 내부용 Application Load Balancer(ALB) 구성을 담당합니다. 
+  - **front_asg/**: Auto Scaling Group 및 Launch Template 관련 리소스를 관리합니다.
+  - **back_asg/**: Auto Scaling Group 및 Launch Template 관련 리소스를 관리합니다. 
+  - **RDS/**: RDS 인스턴스 및 클러스터를 구성합니다.  
   - **security-group/**: 웹, 앱, 데이터베이스 계층별 보안 그룹(Security Group)을 정의합니다.
 
 - **envs/**  
   실제 배포 환경별 설정을 관리하는 디렉토리입니다.  
   - **prod/**: 운영 환경에 대한 설정을 포함하며, 여기서 전체 인프라 구성이 이뤄집니다.  
-    - **main.tf**: 위의 모듈들을 불러와 전체 인프라를 구성하는 메인 Terraform 파일입니다.  
+    - **main.tf**: VPC, 서브넷, 인터넷 게이트웨이(IGW), NAT 게이트웨이 등 네트워크 리소스를 정의합니다. 위의 모듈들을 불러와 전체 인프라를 구성하는 메인 Terraform 파일입니다.  
     - **variables.tf**: 운영 환경에서 사용할 변수들을 정의합니다.  
     - **outputs.tf**: 배포 완료 후 출력할 정보(예: ALB DNS, RDS 엔드포인트 등)를 정의합니다.  
-    - **backend.tf**: Terraform 상태 파일을 원격 저장하기 위한 백엔드 설정(S3, DynamoDB 등)을 포함합니다.
-
+  
 - **provider.tf**  
   AWS 프로바이더를 설정하고, 기본 리전(region) 등 공통 프로바이더 설정을 정의하는 파일입니다.
 
-- **README.md**  
-  프로젝트 소개, 구성 방법, 사용법 등 주요 내용을 담은 문서입니다.
 
 
 
