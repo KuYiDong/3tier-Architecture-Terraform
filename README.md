@@ -38,8 +38,8 @@ Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인
 
 #Terraform을 사용하여 인프라 배포
 <pre> terraform init 
-      terraform plan 
-      terraform apply </pre>
+terraform plan 
+terraform apply </pre>
 
 
 
