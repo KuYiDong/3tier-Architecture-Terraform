@@ -16,61 +16,28 @@
 Terraform은 AWS 리소스를 코드로 관리할 수 있도록 도와주는 인프라 자동화 도구입니다. 반복 가능한 구성과 명확한 변경 이력을 바탕으로 효율적인 협업, 안정적인 배포, 유지보수의 용이성을 제공합니다. 이 프로젝트에서는 Terraform을 통해 네트워크, 보안 그룹, EC2, ALB, RDS 등 다양한 AWS 리소스를 자동으로 구축하고 관리할 수 있습니다.
 
 # Terraform 구성 파일
-1. provider.tf
-AWS 프로바이더 설정과 리전(region)을 정의합니다. 이 프로젝트에서는 us-east-1 리전을 사용합니다.
 
-2. vpc.tf:전체 네트워크 인프라를 구성합니다. 다음 리소스들이 포함됩니다:
-(VPC, 인터넷 게이트웨이, NAT 게이트웨이, Elastic IP)
+- **modules/**  
+  재사용 가능한 Terraform 모듈들이 위치한 폴더입니다.  
+  - **vpc/**: VPC, 서브넷, 인터넷 게이트웨이(IGW), NAT 게이트웨이 등 네트워크 리소스를 정의합니다.  
+  - **alb/**: 외부 및 내부용 Application Load Balancer(ALB) 구성을 담당합니다.  
+  - **asg/**: Auto Scaling Group 및 Launch Template 관련 리소스를 관리합니다.  
+  - **rds/**: RDS 인스턴스 및 클러스터를 구성합니다.  
+  - **security-group/**: 웹, 앱, 데이터베이스 계층별 보안 그룹(Security Group)을 정의합니다.
 
-- 서브넷 구성:
+- **envs/**  
+  실제 배포 환경별 설정을 관리하는 디렉토리입니다.  
+  - **prod/**: 운영 환경에 대한 설정을 포함하며, 여기서 전체 인프라 구성이 이뤄집니다.  
+    - **main.tf**: 위의 모듈들을 불러와 전체 인프라를 구성하는 메인 Terraform 파일입니다.  
+    - **variables.tf**: 운영 환경에서 사용할 변수들을 정의합니다.  
+    - **outputs.tf**: 배포 완료 후 출력할 정보(예: ALB DNS, RDS 엔드포인트 등)를 정의합니다.  
+    - **backend.tf**: Terraform 상태 파일을 원격 저장하기 위한 백엔드 설정(S3, DynamoDB 등)을 포함합니다.
 
-	* 웹 계층용 공용 서브넷 2개
+- **provider.tf**  
+  AWS 프로바이더를 설정하고, 기본 리전(region) 등 공통 프로바이더 설정을 정의하는 파일입니다.
 
-	* 앱 계층용 사설 서브넷 2개
+- **README.md**  
+  프로젝트 소개, 구성 방법, 사용법 등 주요 내용을 담은 문서입니다.
 
-	* 데이터베이스 계층용 사설 서브넷 2개
-
-webtier.tf
-웹 계층을 구성하는 리소스들을 정의합니다.
-
-외부 접근용 ALB (Application Load Balancer)
-
-웹 서버용 보안 그룹
-
-ALB 리스너 및 대상 그룹
-
-EC2 Auto Scaling Group 및 Launch Template
-
-apptier.tf
-애플리케이션 계층을 구성합니다.
-
-내부 전용 ALB
-
-앱 서버용 보안 그룹
-
-ALB 리스너 및 대상 그룹
-
-EC2 Auto Scaling Group 및 Launch Template
-
-database.tf
-데이터 계층을 구성합니다.
-
-RDS 또는 Aurora 클러스터
-
-DB 서브넷 그룹
-
-DB 보안 그룹
-
-bastionhost.tf
-퍼블릭 서브넷에 배스천 호스트(Bastion Host)를 생성하여, 프라이빗 서브넷 내 EC2 인스턴스에 접근할 수 있도록 합니다.
-
-keypair.tf
-EC2 인스턴스에 접근하기 위한 키 페어(Key Pair)를 생성합니다.
-
-variables.tf
-전체 인프라 구성에서 사용할 변수들을 정의합니다.
-
-outputs.tf
-배포 완료 후 출력할 정보들을 정의합니다. 예: ALB 주소, RDS 엔드포인트 등
 
 
