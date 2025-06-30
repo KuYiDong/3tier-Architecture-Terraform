@@ -52,10 +52,10 @@ terraform apply </pre>
 **[서브넷]**
 ![서브넷](images/Subnet.png)
 - **총 8개 서브넷**
-  - **퍼블릭 서브넷 2개**
-  - **프라이빗 서브넷 6개**
-    - **WAS & WEB 서브넷 4개**
-    - **Database 서브넷 2개**
+  - 퍼블릭 서브넷 2개
+  - 프라이빗 서브넷 6개
+    - WAS & WEB 서브넷 4개
+    - Database 서브넷 2개
 
 **[보안그룹]**
 ![보안그룹](images/Security_Group.png)
