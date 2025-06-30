@@ -1,5 +1,5 @@
 # 3tier-Architecture-Terraform
-(./images/구성도.png)
+(images/구성도.png)
 
 
 ## 개요
