@@ -46,13 +46,26 @@ terraform apply </pre>
 ## AWS 리소스
 
 ### vpc
+![리소스맵]images/vpc_리소스맵.png
+
+![서브넷]images/Subnet.png
+
+![보안그룹]images/Security_Group.png
 
 ### ec2
+![ec2]images/EC2.png
 
 ### ALB
+![ALB]images/ALB.png
+
+
+![Web-tg]images/ALB_TG1.png
+
+
+![Was-tg]images/ALB_TG.png
 
 ### ASG
 
 ### RDS
-
+![RDS]images/RDS.png
 
