@@ -79,8 +79,8 @@ terraform apply </pre>
 ### ALB
 **[ALB]**
 ![ALB](images/ALB.png)
-- **Web_alb: 웹서버를 대상으로 로드 밸런싱 처리를 담당한다 **
-- **Was_alb: 어플리케이션 서버를 대상으로 로드 밸런싱 처리를 담당한다 **
+- **Web_alb: 웹서버를 대상으로 로드 밸런싱 처리를 담당한다**
+- **Was_alb: 어플리케이션 서버를 대상으로 로드 밸런싱 처리를 담당한다**
 
 **[Web_ALB_Target_group]**
 ![Web-tg](images/ALB_TG1.png)
@@ -93,5 +93,5 @@ terraform apply </pre>
 ### RDS
 **[RDS]**
 ![RDS](images/RDS.png)
-- **Was_alb: 어플리케이션 서버를 대상으로 로드 밸런싱 처리를 담당한다 **
+- **Multi_az로 구성하여 장애시 failover 되도록 구성, 백업을 활성화 최대 보존기간 7일로 유지**
 
