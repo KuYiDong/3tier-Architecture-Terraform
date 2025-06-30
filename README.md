@@ -1,5 +1,5 @@
 # 3tier-Architecture-Terraform
-![Uploading image.png…]()
+
 
 
 ## 개요
