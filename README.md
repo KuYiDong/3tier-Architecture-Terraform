@@ -49,24 +49,29 @@ terraform apply </pre>
 **[리소스 맵]**
 ![리소스맵](images/vpc_리소스맵.png)
 
+**[서브넷]**
 ![서브넷](images/Subnet.png)
 
+**[보안그룹]**
 ![보안그룹](images/Security_Group.png)
 
 ### ec2
+**[EC2]**
 ![ec2](images/EC2.png)
 
 ### ALB
+**[ALB]**
 ![ALB](images/ALB.png)
 
-
+**[Web_ALB_Target_group]**
 ![Web-tg](images/ALB_TG1.png)
 
-
+**[Was_ALB_Target_group]**
 ![Was-tg](images/ALB_TG.png)
 
 ### ASG
 
 ### RDS
+**[RDS]**
 ![RDS](images/RDS.png)
 
