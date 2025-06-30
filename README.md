@@ -60,6 +60,18 @@ terraform apply </pre>
 **[보안그룹]**
 ![보안그룹](images/Security_Group.png)
 
+| 보안 그룹 이름          | 인바운드 허용  | 출발지            | 목적           |
+| ----------------- | -------- | -------------- | ------------ |
+| **bastion\_host** | 22 (SSH) | `0.0.0.0/0`    | 외부 SSH 접속    |
+| **ext\_alb\_sg**  | 80, 443  | `0.0.0.0/0`    | 외부 사용자용 ALB  |
+| **web\_sg**       | 80       | `ext_alb_sg`   | ALB → Web 서버 |
+|                   | 22       | `bastion_host` | SSH 접속 허용    |
+| **int\_alb\_sg**  | 8080     | `web_sg`       | Web → 내부 ALB |
+| **was\_sg**       | 8080     | `int_alb_sg`   | ALB → WAS 서버 |
+|                   | 22       | `bastion_host` | SSH 접속 허용    |
+| **db\_sg**        | 3306     | `was_sg`       | WAS → DB     |
+
+
 ### ec2
 **[EC2]**
 ![ec2](images/EC2.png)
