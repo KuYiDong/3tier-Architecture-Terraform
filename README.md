@@ -77,29 +77,28 @@ terraform apply </pre>
 
 ### ALB
 **[ALB]**
-<h2>ALB</h2>
-<img src="images/ALB.png" alt="ALB" width="400"/>
+
+<img src="images/ALB.png" alt="ALB" width="600"/>
 - **Web_alb**: 웹서버를 대상으로 로드 밸런싱 처리를 담당한다
 - **Was_alb**: 어플리케이션 서버를 대상으로 로드 밸런싱 처리를 담당한다
 
 **[Web_ALB_Target_group]**
-<h2>Web-TG</h2>
-<img src="images/ALB_TG1.png" alt="Web-tg" width="400"/>
+
+<img src="images/ALB_TG1.png" alt="Web-tg" width="600"/>
 
 **[Was_ALB_Target_group]**
-<h2>Was-TG</h2>
-<img src="images/ALB_TG.png" alt="Was-tg" width="400"/>
+
+<img src="images/ALB_TG.png" alt="Was-tg" width="600"/>
 
 ### ASG
-<h2>ASG(Was)</h2>
-<img src="images/ASG_image.png" alt="Was ASG" width="500"/>
 
-<h2>ASG(Web)</h2>
-<img src="images/ASG_image2.png" alt="Web ASG" width="500"/>
+<img src="images/ASG_image.png" alt="Was ASG" width="600"/>
+
+<img src="images/ASG_image2.png" alt="Web ASG" width="600"/>
 
 ### RDS
 **[RDS]**
-<h2>RDS</h2>
-<img src="images/RDS.png" alt="RDS" width="400"/>
+
+<img src="images/RDS.png" alt="RDS" width="600"/>
 - **Multi_az**로 구성하여 장애시 failover 되도록 구성, 백업을 활성화 최대 보존기간 7일로 유지
 
