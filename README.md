@@ -68,6 +68,7 @@ terraform apply </pre>
     - WAS & WEB 서브넷 4개
     - Database 서브넷 2개
 <br>
+
 ### 보안 그룹
 
 | 보안 그룹 이름    | 인바운드 포트 | 출발지        | 목적                    |
