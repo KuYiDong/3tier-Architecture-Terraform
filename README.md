@@ -1,5 +1,5 @@
 # 3tier-Architecture-Terraform
-![이미지 추가](images/구성도.png)
+![이미지 추가](images/3tier-아키텍쳐쳐.png)
 
 
 ## 개요
@@ -85,6 +85,8 @@ terraform apply </pre>
 ![Was-tg](images/ALB_TG.png)
 
 ### ASG
+![Was-tg](images/ASG image.png)
+![Web-tg](images/ASG image2 .png)
 
 ### RDS
 **[RDS]**
