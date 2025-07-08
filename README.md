@@ -47,9 +47,11 @@ terraform apply </pre>
 
 ### vpc
 **[리소스 맵]**
+
 <img src="images/vpc_리소스맵.png" alt="리소스맵" width="800"/>
 
 **[서브넷]**
+
 <img src="images/Subnet.png" alt="서브넷" width="800"/>
 - **총 8개 서브넷**
   - 퍼블릭 서브넷 2개
