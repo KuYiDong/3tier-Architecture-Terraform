@@ -51,7 +51,8 @@ terraform apply </pre>
 <img src="images/vpc_리소스맵.png" alt="리소스맵" width="700"/>
 
 **[서브넷]**
-![서브넷](images/Subnet.png)
+<h2>서브넷 구성</h2>
+<img src="images/Subnet.png" alt="서브넷" width="600"/>
 - **총 8개 서브넷**
   - 퍼블릭 서브넷 2개
   - 프라이빗 서브넷 6개
@@ -71,27 +72,34 @@ terraform apply </pre>
 
 ### ec2
 **[EC2]**
-![ec2](images/EC2.png)
+<h2>EC2</h2>
+<img src="images/EC2.png" alt="EC2" width="400"/>
 
 ### ALB
 **[ALB]**
-![ALB](images/ALB.png)
+<h2>ALB</h2>
+<img src="images/ALB.png" alt="ALB" width="400"/>
 - **Web_alb**: 웹서버를 대상으로 로드 밸런싱 처리를 담당한다
 - **Was_alb**: 어플리케이션 서버를 대상으로 로드 밸런싱 처리를 담당한다
 
 **[Web_ALB_Target_group]**
-![Web-tg](images/ALB_TG1.png)
+<h2>Web-TG</h2>
+<img src="images/ALB_TG1.png" alt="Web-tg" width="400"/>
 
 **[Was_ALB_Target_group]**
-![Was-tg](images/ALB_TG.png)
+<h2>Was-TG</h2>
+<img src="images/ALB_TG.png" alt="Was-tg" width="400"/>
 
 ### ASG
-![Was-tg](images/ASG_image.png)
+<h2>ASG(Was)</h2>
+<img src="images/ASG_image.png" alt="Was ASG" width="500"/>
 
-![Web-tg](images/ASG_image2.png)
+<h2>ASG(Web)</h2>
+<img src="images/ASG_image2.png" alt="Web ASG" width="500"/>
 
 ### RDS
 **[RDS]**
-![RDS](images/RDS.png)
+<h2>RDS</h2>
+<img src="images/RDS.png" alt="RDS" width="400"/>
 - **Multi_az**로 구성하여 장애시 failover 되도록 구성, 백업을 활성화 최대 보존기간 7일로 유지
 
