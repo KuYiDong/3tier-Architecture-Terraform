@@ -47,7 +47,8 @@ terraform apply </pre>
 
 ### vpc
 **[리소스 맵]**
-![리소스맵](images/vpc_리소스맵.png)
+<h2>VPC 리소스 맵</h2>
+<img src="images/vpc_리소스맵.png" alt="리소스맵" width="700"/>
 
 **[서브넷]**
 ![서브넷](images/Subnet.png)
