@@ -85,9 +85,9 @@ terraform apply </pre>
 ![Was-tg](images/ALB_TG.png)
 
 ### ASG
-![Was-tg](images/ASG image.png)
+![Was-tg](images/ASG_image.png)
 
-![Web-tg](images/ASG image2 .png)
+![Web-tg](images/ASG_image2.png)
 
 ### RDS
 **[RDS]**
