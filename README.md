@@ -72,8 +72,8 @@ terraform apply </pre>
 
 ### ec2
 **[EC2]**
-<h2>EC2</h2>
-<img src="images/EC2.png" alt="EC2" width="400"/>
+
+<img src="images/EC2.png" alt="EC2" width="600"/>
 
 ### ALB
 **[ALB]**
